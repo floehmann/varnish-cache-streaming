@@ -11,17 +11,17 @@ Building a RPM package from a git checkout
 You may build an rpm package direct from a git checkout. Here is an
 example on how you may do this:
 
-git clone git://git.varnish-cache.org/varnish-cache
-cd varnish-cache
+git clone git://github.com/mbgrydeland/varnish-cache-streaming.git
+cd varnish-cache-streaming/
 sed -i "s/^Release: .*/Release: 0.git$(date +%Y%m%d)%{?dist}/" \
     redhat/varnish.spec
 ./autogen.sh && ./configure 
-make dist && rpmbuild -ts varnish-trunk.tar.gz
+make dist && rpmbuild -ts varnish-3.0.2-streaming.2.tar.gz
 
-This builds a source rpm. Then you can, for example on a RHEL5 system,
+This builds a source rpm. Then you can, for example on a RHEL6 system,
 do something like this:
 
-rpmbuild --define "dist .el5" --rebuild /path/to/varnish-3.0-0.git20110203.src.rpm
+rpmbuild --define "dist .el6" --rebuild /path/to/varnish-3.0-0.git20110203.src.rpm
 
 
 Upgrading from 1.x to 2.0

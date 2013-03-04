@@ -1,4 +1,4 @@
-#% define v_rc ""
+%define v_rc streaming.2
 Summary: High-performance HTTP accelerator
 Name: varnish
 Version: 3.0.2
